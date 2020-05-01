@@ -1,28 +1,20 @@
 import React from "react";
-function FilterRow() {
+function FilterRow(props) {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-2">
-          <p>Profile Image</p>
-        </div>
-        <div className="col-md-2">
-          <p>Name</p>
-        </div>
-        <div className="col-md-2">
-          <p>Email</p>
-        </div>
-        <div className="col-md-2">
-          <p>ID</p>
-        </div>
-        <div className="col-md-2">
-          <p>Phone Number</p>
-        </div>
-        <div className="col-md-2">
-          <p>Username</p>
-        </div>
-      </div>
-    </div>
+    <thead>
+      <tr>
+        {/* onclick on column to sort, send through props */}
+        <th>Profile Image</th>
+
+        <th>Name</th>
+
+        <th>Email</th>
+
+        <th>ID</th>
+
+        <th>Phone Number</th>
+      </tr>
+    </thead>
   );
 }
 

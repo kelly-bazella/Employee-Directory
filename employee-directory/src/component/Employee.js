@@ -1,33 +1,33 @@
-import React from 'react';
+import React from "react";
+import Row from "./Row";
+import FilterRow from "./FilterRow";
 
-function Employee(props){
-    console.log(props)
-    return (
-       <div>
-           <div className="container">
-               <div className="row">
-               <div className="col-md-2">
-                    <img src={props.image} alt="employee" />
-                </div>  
-                 <div className="col-md-2">
-                    <p>{props.first} {props.last}</p>
-                </div>  
-                <div className="col-md-2">
-                    <p>{props.email}</p>
-                </div>  
-                <div className="col-md-2">
-                    <p>{props.id}</p>
-                </div>  
-                <div className="col-md-2">
-                    <p>{props.phone}</p>
-                </div>  
-                <div className="col-md-2">
-                    <p>{props.username}</p>
-                </div>  
-               </div>
-           </div>
-       </div> 
-    )
+function Employee(props) {
+  console.log(props);
+  return (
+    <div>
+      <div className="container">
+        <table className="table">
+            <FilterRow />
+          <tbody>
+           {
+               props.emps.map(emp => (
+                   <Row
+                   first={emp.first}
+                   last={emp.last}
+                   email={emp.email}
+                   id={emp.id}
+                   phone = {emp.phone}
+                   key = {emp.id}
+                   image={emp.image}
+                   />
+               ))
+           }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
 
 export default Employee;
