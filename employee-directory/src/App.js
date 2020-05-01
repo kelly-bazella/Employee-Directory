@@ -9,6 +9,9 @@ class App extends Component {
     employeeData:[]
   }
 
+//filter function
+
+
 componentDidMount(){
   API.getEmployees(this.state.amount)
   .then((employeeData) => {
