@@ -1,4 +1,9 @@
+### Employee Directory
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Purpose
+
+The purpose of this application is to sort employee data in an efficient manner. The user is presented with a list of employee data, they can choose to search the employee by name or sort the employee's by clicking the column title. 
 
 ## Available Scripts
 
