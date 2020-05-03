@@ -8,7 +8,8 @@ function Employee(props) {
     <div>
       <div className="container">
         <table className="table">
-            <FilterRow />
+            <FilterRow 
+             id={emp.id}/>
           <tbody>
            {
                props.emps.map(emp => (
@@ -20,6 +21,7 @@ function Employee(props) {
                    phone = {emp.phone}
                    key = {emp.id}
                    image={emp.image}
+                   
                    />
                ))
            }

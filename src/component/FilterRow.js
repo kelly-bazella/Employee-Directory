@@ -1,4 +1,6 @@
 import React from "react";
+import Employee from "./Employee"
+
 function FilterRow(props) {
   return (
     <thead>
@@ -10,7 +12,14 @@ function FilterRow(props) {
 
         <th>Email</th>
 
-        <th>ID</th>
+        <th>
+
+          <button
+          onClick={this.handleSort}>
+              ID
+          </button>
+
+        </th>
 
         <th>Phone Number</th>
       </tr>

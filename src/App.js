@@ -2,6 +2,19 @@ import React, { Component } from "react";
 import Employee from "./component/Employee";
 import Header from "./component/Header";
 import API from "./utils/API";
+//filter function
+// function SortByName (props){
+//   const {data} = props;
+//     let sortedNames = [...data];
+//     sortedNames.sort((a,b) => {
+//       if(a.first <a.last){
+//         return -1;
+//       }if(a.first > a.last){
+//         return 1;
+//       }
+//       return 
+//     })
+//   }
 
 class App extends Component {
   state={
@@ -9,7 +22,9 @@ class App extends Component {
     employeeData:[]
   }
 
-//filter function
+sortId = () => {
+  
+}
 
 
 componentDidMount(){
@@ -39,7 +54,7 @@ componentDidMount(){
         <Employee 
         // for each 
       emps={this.state.employeeData}
-    
+      
          />
       </div>
     );
