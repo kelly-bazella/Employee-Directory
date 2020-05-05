@@ -9,7 +9,8 @@ function Employee(props) {
       <div className="container">
         <table className="table">
             <FilterRow 
-             id={emp.id}/>
+            // sortId={this.props.sortId}
+            />
           <tbody>
            {
                props.emps.map(emp => (
@@ -21,7 +22,6 @@ function Employee(props) {
                    phone = {emp.phone}
                    key = {emp.id}
                    image={emp.image}
-                   
                    />
                ))
            }
