@@ -16,6 +16,7 @@ function FilterRow(props) {
         <th>
 
           <button 
+          onClick={console.log("This should sort")}
           // onClick={this.props.sortId}
           >
             ID
