@@ -19,7 +19,7 @@
   },
   "engines": {
     "npm": "6.9.0",
-    "node": "vs10.16.3"
+    "node": "10.16.3"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -11,9 +11,9 @@ The application is created with React and is broken into components, component s
 As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
 
 ## Links
-[GitHub repository:] (https://github.com/kelly-bazella/Employee-Directory)
+GitHub repository: (https://github.com/kelly-bazella/Employee-Directory)
 
-[Heroku Link:] ()
+Heroku Link: ()
 
 ## Criteria
 
