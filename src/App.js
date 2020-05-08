@@ -11,10 +11,6 @@ class App extends Component {
     sortDirection: "desc",
   };
 
-  // sortId = (column) => {
-  //
-  // }
-
   // code to sort first name column (use later)
   sortName = (e) => {
     const column = e.target.value;

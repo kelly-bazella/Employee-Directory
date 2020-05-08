@@ -10,7 +10,10 @@ function FilterRow(props) {
         <th>Profile Image</th>
 
         <th>
-          <button onClick={props.sortName} value="first">
+          <button 
+          className="btn btn-secondary" 
+          onClick={props.sortName} 
+          value="first">
           Name
           </button>
           
@@ -21,7 +24,9 @@ function FilterRow(props) {
         <th>
 
           <button 
-          onClick={props.sortName} value="id"
+          onClick={props.sortName} 
+          value="id"
+          className="btn btn-secondary"
           >
             ID
           </button>
