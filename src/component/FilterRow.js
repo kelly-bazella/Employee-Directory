@@ -9,15 +9,19 @@ function FilterRow(props) {
         {/* onclick on column to sort, send through props */}
         <th>Profile Image</th>
 
-        <th>Name</th>
+        <th>
+          <button onClick={props.sortName} value="first">
+          Name
+          </button>
+          
+          </th>
 
         <th>Email</th>
 
         <th>
 
           <button 
-          onClick={console.log("This should sort")}
-          // onClick={this.props.sortId}
+          onClick={props.sortName} value="id"
           >
             ID
           </button>

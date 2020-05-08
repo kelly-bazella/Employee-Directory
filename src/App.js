@@ -4,50 +4,42 @@ import Header from "./component/Header";
 import API from "./utils/API";
 
 class App extends Component {
-    state = {
-      amount: 234,
-      employeeData: [],
-      sort: {
-        column: null,
-        direction: "desc",
-      },
-    };
-  
+  state = {
+    amount: 234,
+    employeeData: [],
+    sortedData: [],
+    sortDirection: "desc",
+  };
 
-  sortId = (id) => {
-    console.log(id)
-  }
+  // sortId = (column) => {
+  //
+  // }
 
-  // code to sort first name column (use later possibly)
-  // sortName = (column) => {
-  //   return e => {
-  //    const direction = this.state.sort.column ? (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'desc'
-  //    const sortEmployees = this.state.employeeData.sort((a, b) => {
-  //      if (column === 'name.first') {
-  //       const nameA = a.name.first.toUpperCase()
-  //       const nameB = b.name.first.toUpperCase()
-  //       if(nameA < nameB)
-  //         return -1
-  //       if(nameA> nameB)
-  //       return 1
-  //       else return 0
-  //      }else {
-  //        return a.name.first-b.name.first
-  //      }
-  //    })
-  //    if (direction === 'desc'){
-  //      sortEmployees.reverse()
-  //    }
-  //    this.setState({
-  //      employeeData: sortEmployees,
-  //      sort:{
-  //        column, direction
-  //      }
-  //    })
-  //   }
+  // code to sort first name column (use later)
+  sortName = (e) => {
+    const column = e.target.value;
+    console.log(column);
+    const direction = this.state.sortDirection === "desc" ? "asc" : "desc";
+    const sortEmployees = this.state.employeeData.sort((a, b) => {
+      const nameA = a[column];
+      const nameB = b[column];
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      else return 0;
+    });
+    if (direction === "desc") {
+      sortEmployees.reverse();
+    }
+    this.setState({
+      sortedData: sortEmployees,
+      sortDirection: direction
+    });
+  };
+
+  //code to filter rows
+  //  filterName = (name) => {
 
   //  }
-  // code to filter through rows
 
   componentDidMount() {
     API.getEmployees(this.state.amount).then((employeeData) => {
@@ -62,7 +54,7 @@ class App extends Component {
         };
         return data;
       });
-      this.setState({ employeeData: empData });
+      this.setState({ employeeData: empData, sortedData: empData });
       // console.log(this.state.employeeData)
     });
   }
@@ -71,7 +63,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Employee sortId={this.sortId} emps={this.state.employeeData} />
+        <Employee sortName={this.sortName} emps={this.state.sortedData} />
       </div>
     );
   }

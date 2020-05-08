@@ -9,7 +9,7 @@ function Employee(props) {
       <div className="container">
         <table className="table">
             <FilterRow 
-            // sortId={this.props.sortId}
+            sortName={props.sortName}
             />
           <tbody>
            {
