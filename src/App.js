@@ -32,10 +32,19 @@ class App extends Component {
     });
   };
 
-  //code to filter rows
-  //  filterName = (name) => {
+  handleChange = (e) => {
+    const name = e.target.value;
+    this.setState({
+      sortedData: this.filterName(name, this.state.employeeData)
+    })
+    console.log(name)
+  }
 
-  //  }
+   filterName = (name, arr) => {
+    return(
+      arr.filter(emp => (emp.first.includes(name)))
+    )
+   }
 
   componentDidMount() {
     API.getEmployees(this.state.amount).then((employeeData) => {
@@ -58,7 +67,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header handleChange={this.handleChange}/>
         <Employee sortName={this.sortName} emps={this.state.sortedData} />
       </div>
     );
