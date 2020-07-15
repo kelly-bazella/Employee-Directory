@@ -23,4 +23,13 @@ Heroku Link: (https://bazella-employee-tracker.herokuapp.com/)
 ## Business Context 
 An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
+## Languages Used
+
+- JavaScript
+- HTML
+
+## GIF
+
+![](demo.gif)
+
 
